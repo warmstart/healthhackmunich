@@ -1,5 +1,5 @@
 Django==1.6.5
-Magic-file-extensions==0.2
+Magic-file-extensions==0.3
 PAM==0.4.2
 Pillow==2.6.1
 SecretStorage==2.1.1
