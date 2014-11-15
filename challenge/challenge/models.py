@@ -8,7 +8,7 @@ class Challenge(models.Model):
     stepsgoal = models.IntegerField(default=0)
     deadline = models.DateTimeField()
 
-class ChallengeType(models.Model):
+#class ChallengeType(models.Model):
     
 
 class ChallengeParticipation(models.Model):
