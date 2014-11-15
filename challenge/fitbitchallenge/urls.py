@@ -12,4 +12,5 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^(?P<user_id>\d+)/$', userprofile.views.viewProfile, name='viewProfile'),
+    url(r'^getChallenges/(?P<user_id>\d+)$', userprofile.views.getChallenges, name='getChallenges'),
 )
