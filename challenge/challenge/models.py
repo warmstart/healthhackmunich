@@ -1,5 +1,6 @@
 from django.db import models
-
+import userprofile.models.user
+ 
 # Create your models here.
 
 class Challenge(models.Model):
@@ -15,7 +16,7 @@ class Challenge(models.Model):
     
 
 class ChallengeParticipation(models.Model):
-    user = models.ForeignKey('userprofile.user')
+    user = models.ForeignKey(userprofile.models.user)
     challenge = models.ForeignKey(Challenge)
     steps = models.IntegerField(default=0)
     status = models.CharField(max_length=200)
