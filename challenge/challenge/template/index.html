@@ -8,30 +8,59 @@
     <title>Fitbit Challenge</title>
 
     <!-- Bootstrap -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
     <link href="../../fitbitchallenge/static/css/bootstrap.css" rel="stylesheet">
     <link href="../../fitbitchallenge/static/css/material.css" rel="stylesheet">
     <link href="../../fitbitchallenge/static/css/material-wfont.css" rel="stylesheet">
+    <link href="../../fitbitchallenge/static/css/style.css" rel="stylesheet">
   </head>
   <body>
-    <div class="navbar navbar-success">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="javascript:void(0)">Fitbit Challenge</a>
-      </div>
-      <div class="navbar-collapse collapse navbar-responsive-collapse">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="javascript:void(0)">About</a></li>
-          <li><a href="javascript:void(0)">Login</a></li>
-        </ul>
-      </div>
-    </div>
   <!-- HEAD END -->
 
   <!-- CONTENT START -->
+  <div class="container-wrapper background-image">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 col-sm-offset-8 marketing-box">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#" id="about">About</a></li>
+            <li><a href="#" id="login">Login</a></li>
+          </ul>
+          <div class="marketing-content">
+            <div class="marketing-text animated">
+
+              <h1>Headline</h1>
+              <p>Some fancy marketing text</p>
+            </div>
+            <div class="login-box animated">
+              <h1>Login</h1>
+              <form class="form-horizontal">
+                <div class="form-group">
+                  <label for="inputEmail" class="col-lg-3 control-label">Email</label>
+                  <div class="col-lg-9">
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword" class="col-lg-3 control-label">Password</label>
+                  <div class="col-lg-9">
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-9 col-lg-offset-3">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 
 
@@ -42,11 +71,7 @@
     <script src="../../fitbitchallenge/static/js/jquery-1.11.1.min.js"></script>
     <script src="../../fitbitchallenge/static/js/material.js"></script>
     <script src="../../fitbitchallenge/static/js/ripples.js"></script>
-    <script>
-      $(document).ready(function() {
-        $.material.init();
-      });
-    </script>
+    <script src="../../fitbitchallenge/static/js/script.js"></script>
   </body>
 </html>
 <!-- FOOTER END -->
