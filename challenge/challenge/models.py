@@ -1,5 +1,4 @@
 from django.db import models
-from fitbitchallenge.userprofile.models import user
  
 # Create your models here.
 
@@ -16,7 +15,7 @@ class Challenge(models.Model):
     
 
 class ChallengeParticipation(models.Model):
-    user = models.ForeignKey(user)
+    user = models.ForeignKey('userprofile.user')
     challenge = models.ForeignKey(Challenge)
     steps = models.IntegerField(default=0)
     status = models.CharField(max_length=200)
