@@ -13,9 +13,6 @@ body.with-navigation {
   -o-background-size: cover;
   background-size: cover;
 }
-.navbar {
-  border-bottom: 1px solid #eee;
-}
 .navbar-right {
   padding-right: 16px;
 }
@@ -66,6 +63,20 @@ a:visited {
 .form-control {
   border-bottom: 1px solid #fff;
   color: #fff;
+}
+::-webkit-input-placeholder {
+  color: #fff !important;
+}
+:-moz-placeholder {
+  color: #fff !important;
+  opacity: 1;
+}
+::-moz-placeholder {
+  color: #fff !important;
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  color: #fff !important;
 }
 .content .img-circle {
   position: absolute;
