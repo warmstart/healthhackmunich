@@ -57,7 +57,10 @@ a:visited {
   color: #fff !important;
 }
 .marketing-box h1 {
-  font-size: 1.8em;
+  font-size: 7vh;
+}
+.marketing-box p {
+  font-size: 3vh;
 }
 .form-control-wrapper .form-control,
 .form-control {
