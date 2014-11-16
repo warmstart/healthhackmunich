@@ -30,3 +30,7 @@ def viewProfile(request, user_id):
 def getChallenges(request,user_id):
     c = ChallengeParticipation.objects.filter(user = user_id)
     return HttpResponse(c)
+
+
+def landing(request):
+    return render(request, 'challenge/landing.html', [])
