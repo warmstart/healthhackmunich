@@ -9,5 +9,6 @@ class badges(models.Model):
 class badgesEarnt(models.Model):
     user    = models.ForeignKey('userprofile.user')
     challenge = models.ForeignKey('challenge.Challenge')
+    badge   = models.ForeignKey('badges.badges')
     datetime = models.DateTimeField()
     steps = models.IntegerField(default=0)
