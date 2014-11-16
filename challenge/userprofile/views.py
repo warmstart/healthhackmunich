@@ -20,7 +20,7 @@ def viewProfile(request, user_id):
         
         onechall['name'] = thischall.challenge_name
         onechall['progress'] = min(100 * (challenge.steps / float(thischall.stepsgoal) ),100)
-        onechall['description'] = "blablabla"
+        onechall['description'] = thischall.description 
         
         if challenge.status != "finished":
             cforrender.append(onechall)

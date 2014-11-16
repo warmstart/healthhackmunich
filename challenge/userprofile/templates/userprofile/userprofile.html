@@ -14,7 +14,7 @@
     <link href="/static/css/material-wfont.css" rel="stylesheet">
     <link href="/static/css/style.css" rel="stylesheet">
   </head>
-  <body class="with-navigation">
+  <body class="with-navigation" onkeypress="window.location.href='/addSteps/1/280/';">
   <!-- HEAD END -->
 
   <div class="navbar navbar-success navbar-fixed-top" role="navigation">
@@ -40,7 +40,8 @@
   </div>
 
   <!-- CONTENT START -->
-  <div class="container content">
+
+  <div class="container content" onkeydown="addSteps()">
     <div class="row">
       <div class="col-xs-12">
         <div class="well">
@@ -52,6 +53,7 @@
               <p>{{userage}}, {% if usergender == 'm' %} 
                                  Male {% else %} Female {%endif%}
               </p>
+
             </div>
             <div class="col-xs-6">
             </div>
