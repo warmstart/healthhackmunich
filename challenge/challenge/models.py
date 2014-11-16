@@ -7,6 +7,7 @@ class Challenge(models.Model):
     creator = models.CharField(max_length=200)
     stepsgoal = models.IntegerField(default=0)
     deadline = models.DateTimeField()
+    description = models.CharField(max_length=200)
     
     def __unicode__(self):
         return "{0}".format(self.challenge_name)

@@ -13,20 +13,26 @@ def viewProfile(request, user_id):
     u = get_object_or_404(user, pk=user_id)
     c = ChallengeParticipation.objects.filter(user=user_id)
     cforrender = []
+    fcforrender = []
     for challenge in c:
         onechall = {}
         thischall = challenge.challenge
-
+        
         onechall['name'] = thischall.challenge_name
         onechall['progress'] = min(100 * (challenge.steps / float(thischall.stepsgoal) ),100)
         onechall['description'] = "blablabla"
-        cforrender.append(onechall)
+        
+        if challenge.status != "finished":
+            cforrender.append(onechall)
+        elif challenge.status == "finished":
+            fcforrender.append(onechall)
 
     context = {'username': u.name,
                'userage': u.age,
                'userlocation': u.location,
                'usergender': u.gender,
-               'challenges': cforrender, }
+               'challenges': cforrender, 
+               'fchallenges': fcforrender, }
     return render(request, 'userprofile/userprofile.html', context)
 
 
@@ -44,6 +50,8 @@ def addSteps(request, user_id, steps):
     logger.debug(participations)
     for c in participations:
         c.steps += int(steps)
+        if (c.challenge.stepsgoal <= c.steps):
+            c.status = "finished"
         c.save()
     return viewProfile(request, user_id)
 
