@@ -62,19 +62,19 @@
     <div class="row">
       <div class="col-xs-12 col-sm-4">
         <div class="well text-center">
-          <img class="img-responsive center-block" src="/static/img/1.png"><br>
+          <img height="200" class="img-responsive center-block" src="/static/img/1.png"><br>
           <h3>Best Runner Munich</h3>
         </div>
       </div>
       <div class="col-xs-12 col-sm-4">
         <div class="well text-center">
-          <img class="img-responsive center-block" src="/static/img/2.png"><br>
+          <img height="200" class="img-responsive center-block" src="/static/img/badge.png"><br>
           <h3>Walked 1000km</h3>
         </div>
       </div>
       <div class="col-xs-12 col-sm-4">
         <div class="well text-center">
-          <img class="img-responsive center-block" src="/static/img/3.png"><br>
+          <img height="200" class="img-responsive center-block" src="/static/img/Oldest.png"><br>
           <h3>Oldes Participant</h3>
         </div>
       </div>
@@ -101,6 +101,28 @@
             {% endfor %}
           </div>
         </div>
+      </div>
+
+      <div class="col-xs-12">
+        <div class="well">
+          <h3>Finished Challenges</h3>
+          <div class="list-group">
+            
+            {% for fchall in fchallenges %}
+	    <div class="list-group-item">
+              <div class="row-action-primary">
+                <i class="mdi-action-accessibility"></i>
+              </div>
+              <div class="row-content">
+                <div class="least-content">{{ fchall.progress}}% <progress value="{{ fchall.progress}}" max="100"></progress></div>
+                <h4 class="list-group-item-heading">{{ fchall.name }}</h4>
+                <p class="list-group-item-text">{{ fchall.description }}</p>
+              </div>
+            </div>
+            
+            <div class="list-group-separator"></div>
+            {% endfor %}
+          </div>
       </div>
     </div>
   </div>
