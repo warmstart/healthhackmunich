@@ -15,6 +15,7 @@ urlpatterns = patterns('',
     url(r'^(?P<user_id>\d+)/$', userprofile.views.viewProfile, name='viewProfile'),
     url(r'^getChallenges/(?P<user_id>\d+)$', userprofile.views.getChallenges, name='getChallenges'),
     url(r'^listChallenges/', challenge.views.listChallenges, name='listChallenges'),
+    url(r'^joinChallenge/(?P<user_id>\d+)/(?P<chall_id>\d+)/$', challenge.views.joinChallenge, name='joinChallenge'),
     url(r'^addSteps/(?P<user_id>\d+)/(?P<steps>\d+)/$', userprofile.views.addSteps, name='addSteps'),
     url(r'^', userprofile.views.landing, name='landing'),
 )
