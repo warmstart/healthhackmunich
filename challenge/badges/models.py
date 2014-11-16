@@ -2,8 +2,8 @@ from django.db import models
 
 # Create your models here.
 class badges(models.Model):
-    picture = models.CharacterField(max_length=200)
-    name    = models.CharacterField(max_length=200)
+    picture = models.CharField(max_length=200)
+    name    = models.CharField(max_length=200)
 
 
 class badgesEarnt(models.Model):
