@@ -84,39 +84,21 @@
         <div class="well">
           <h3>Ongoing Challenges</h3>
           <div class="list-group">
-            <div class="list-group-item">
+            
+            {% for chall in challenges %}
+	    <div class="list-group-item">
               <div class="row-action-primary">
                 <i class="mdi-action-accessibility"></i>
               </div>
               <div class="row-content">
-                <div class="least-content">80% <progress value="80" max="100"></progress></div>
-                <h4 class="list-group-item-heading">1000 Steps per day</h4>
-                <p class="list-group-item-text">Challenge description ..</p>
+                <div class="least-content">{{ chall.progress}}% <progress value="{{ chall.progress}}" max="100"></progress></div>
+                <h4 class="list-group-item-heading">{{ chall.name }}</h4>
+                <p class="list-group-item-text">{{ chall.progress }}</p>
               </div>
             </div>
+            
             <div class="list-group-separator"></div>
-            <div class="list-group-item">
-              <div class="row-action-primary">
-                <i class="mdi-action-face-unlock"></i>
-              </div>
-              <div class="row-content">
-                <div class="least-content">50% <progress value="50" max="100"></progress></div>
-                <h4 class="list-group-item-heading">Kale Intake</h4>
-                <p class="list-group-item-text">Challenge description ..</p>
-              </div>
-            </div>
-            <div class="list-group-separator"></div>
-            <div class="list-group-item">
-              <div class="row-action-primary">
-                <i class="mdi-maps-directions-walk"></i>
-              </div>
-              <div class="row-content">
-                <div class="least-content">10% <progress value="10" max="100"></progress></div>
-                <h4 class="list-group-item-heading">Daily Running</h4>
-                <p class="list-group-item-text">Challenge description ..</p>
-              </div>
-            </div>
-            <div class="list-group-separator"></div>
+            {% endfor %}
           </div>
         </div>
       </div>

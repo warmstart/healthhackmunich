@@ -8,10 +8,22 @@ from challenge.models import ChallengeParticipation, Challenge
 # Create your views here.
 def viewProfile(request, user_id):
     u = get_object_or_404(user, pk=user_id)
+    c = ChallengeParticipation.objects.filter(user = user_id)
+    cforrender = []
+    for challenge in c:
+        onechall = {}
+        thischall = challenge.challenge
+
+        onechall['name'] = thischall.challenge_name
+        onechall['progress'] = 100 * (challenge.steps / float(thischall.stepsgoal) )
+        onechall['description'] = "blablabla"
+        cforrender.append(onechall)
+
     context = {'username' : u.name,
                'userage'  : u.age,
                'userlocation' : u.location,
-               'usergender'   : u.gender,}
+               'usergender'   : u.gender,
+               'challenges'   : cforrender, }
     return render(request, 'userprofile/userprofile.html', context)
 
 
