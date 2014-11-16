@@ -3,7 +3,10 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 
 from userprofile.models import user
-from challenge.models import ChallengeParticipation, Challenge
+from challenge.models import ChallengeParticipation
+import logging
+
+logger = logging.getLogger(__name__)
 
 # Create your views here.
 def viewProfile(request, user_id):
@@ -37,5 +40,10 @@ def landing(request):
 
 
 def addSteps(request, user_id, steps):
+    participations = ChallengeParticipation.objects.filter(user=user_id)
+    logger.debug(participations)
+    for c in participations:
+        c.steps += int(steps)
+        c.save()
     return viewProfile(request, user_id)
 
