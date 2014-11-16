@@ -68,39 +68,19 @@
       <div class="col-xs-12">
         <div class="well">
           <div class="list-group">
+	{% for chall in challenges %}
             <div class="list-group-item">
               <div class="row-action-primary">
                 <i class="mdi-action-accessibility"></i>
               </div>
               <div class="row-content">
-                <div class="least-content">80%</div>
-                <h4 class="list-group-item-heading">1000 Steps per day</h4>
-                <p class="list-group-item-text">Challenge description ..</p>
+                <div class="least-content">bla</div>
+                <h4 class="list-group-item-heading">{{ chall.name }}</h4>
+                <p class="list-group-item-text">{{ chall.description }}</p>
               </div>
             </div>
             <div class="list-group-separator"></div>
-            <div class="list-group-item">
-              <div class="row-action-primary">
-                <i class="mdi-action-face-unlock"></i>
-              </div>
-              <div class="row-content">
-                <div class="least-content">50%</div>
-                <h4 class="list-group-item-heading">Kale Intake</h4>
-                <p class="list-group-item-text">Challenge description ..</p>
-              </div>
-            </div>
-            <div class="list-group-separator"></div>
-            <div class="list-group-item">
-              <div class="row-action-primary">
-                <i class="mdi-maps-directions-walk"></i>
-              </div>
-              <div class="row-content">
-                <div class="least-content">10%</div>
-                <h4 class="list-group-item-heading">Daily Running</h4>
-                <p class="list-group-item-text">Challenge description ..</p>
-              </div>
-            </div>
-            <div class="list-group-separator"></div>
+	{% endfor %}
           </div>
         </div>
       </div>
