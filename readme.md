@@ -15,3 +15,9 @@ With 17,000 health apps on the marketplace, 60% are targeted directly to consume
 
 ##Concept
 ###Challenges
+
+You can create challenges and pose rewards and badges for people who solve the challenge.
+
+The challenges are all based on sports activities and will be measured by FitBit or other smart devices (more to come).
+
+
