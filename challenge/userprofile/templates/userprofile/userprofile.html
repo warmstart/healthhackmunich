@@ -62,24 +62,14 @@
       </div>
     </div>
     <div class="row">
+{% for b in badges %}
       <div class="col-xs-12 col-sm-4">
         <div class="well text-center">
-          <img height="200" class="img-responsive center-block" src="/static/img/1.png"><br>
-          <h3>Best Runner Munich</h3>
+          <img height="200" class="img-responsive center-block" src="{{b.picture}}"><br>
+          <h3>{{b.name}}</h3>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-4">
-        <div class="well text-center">
-          <img height="200" class="img-responsive center-block" src="/static/img/badge.png"><br>
-          <h3>Walked 1000km</h3>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-4">
-        <div class="well text-center">
-          <img height="200" class="img-responsive center-block" src="/static/img/Oldest.png"><br>
-          <h3>Oldes Participant</h3>
-        </div>
-      </div>
+{% endfor %}
     </div>
     <div class="row">
       <div class="col-xs-12">

@@ -4,7 +4,11 @@ from django.http import HttpResponse
 
 from userprofile.models import user
 from challenge.models import ChallengeParticipation
+from badges.models import badges, badgesEarnt
+
 import logging
+import datetime
+
 
 logger = logging.getLogger(__name__)
 
@@ -27,12 +31,24 @@ def viewProfile(request, user_id):
         elif challenge.status == "finished":
             fcforrender.append(onechall)
 
+    b = badgesEarnt.objects.filter(user=user_id)
+    bforrender = []
+    for badge in b:
+        onebadge = {}
+        thisbadge = badge.badge
+
+        onebadge['picture'] = thisbadge.picture
+        onebadge['name']    = thisbadge.name
+        onebadge['date']    = badge.datetime
+        bforrender.append(onebadge)
+
     context = {'username': u.name,
                'userage': u.age,
                'userlocation': u.location,
                'usergender': u.gender,
                'challenges': cforrender, 
-               'fchallenges': fcforrender, }
+               'fchallenges': fcforrender, 
+               'badges'     : bforrender,}
     return render(request, 'userprofile/userprofile.html', context)
 
 
@@ -50,8 +66,10 @@ def addSteps(request, user_id, steps):
     logger.debug(participations)
     for c in participations:
         c.steps += int(steps)
-        if (c.challenge.stepsgoal <= c.steps):
+        if ((c.challenge.stepsgoal <= c.steps) and (c.status != "finished")):
             c.status = "finished"
+            b = badgesEarnt(user=user.objects.get(id=user_id), challenge=c.challenge, datetime=datetime.datetime.now(), steps=c.steps, badge=badges.objects.get(id=1))
+            b.save()
         c.save()
     return viewProfile(request, user_id)
 
