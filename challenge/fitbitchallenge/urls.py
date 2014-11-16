@@ -4,6 +4,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 import userprofile.views
+import challenge.views
 
 urlpatterns = patterns('',
     # Examples:
@@ -13,4 +14,5 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^(?P<user_id>\d+)/$', userprofile.views.viewProfile, name='viewProfile'),
     url(r'^getChallenges/(?P<user_id>\d+)$', userprofile.views.getChallenges, name='getChallenges'),
+    url(r'^listChallenges/', challenge.views.listChallenges, name='listChallenges'),
 )
