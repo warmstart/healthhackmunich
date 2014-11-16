@@ -12,6 +12,7 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^/', userprofile.views.landing, name='landing'),
     url(r'^(?P<user_id>\d+)/$', userprofile.views.viewProfile, name='viewProfile'),
     url(r'^getChallenges/(?P<user_id>\d+)$', userprofile.views.getChallenges, name='getChallenges'),
     url(r'^listChallenges/', challenge.views.listChallenges, name='listChallenges'),
